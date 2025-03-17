@@ -71,8 +71,11 @@ function OrderInfo({ id }) {
       <p><strong>Servicio:</strong> {order.fail}</p>
     </div>
     <div className="col-4">
-      <p><strong>Tecnico:</strong> {order.assignedTechnician.name}</p>
-    </div>
+  <p>
+    <strong>Tecnico:</strong> 
+    {order.assignedTechnician && order.assignedTechnician.name ? order.assignedTechnician.name : 'No asignado'}
+  </p>
+</div>
   </div>
   <div className="row">
     <div className="col-4">

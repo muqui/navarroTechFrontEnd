@@ -19,66 +19,64 @@ function Login() {
 
   // Función para manejar el envío de datos
   const handleSubmit = async (values) => {
-    console.log("Boton autenticacion")
+    console.log("Boton autenticacion");
    
     await auth?.login(values.email, values.password);
   };
 
   return (
     <>
-    <Header/>
-    // Modal de Login
-    <div className="modal-container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="login-modal p-4 shadow-lg rounded-3" style={{ width: '33.33%' }}>
-        <h2 className="text-center mb-4">Formulario de Inicio de Sesión</h2>
+      <Header/>
+      {/* Modal de Login */}
+      <div className="modal-container d-flex justify-content-center align-items-center min-vh-100">
+        <div className="login-modal p-4 shadow-lg rounded-3 col-12 col-md-6 col-lg-4">
+          <h2 className="text-center mb-4">Formulario de Inicio de Sesión</h2>
 
-        {/* Mostrar el mensaje de error si existe */}
-        {errorMessage && (
-          <div className="alert alert-danger" role="alert">
-            {errorMessage}
-          </div>
-        )}
-
-        <Formik
-          initialValues={{
-            email: '',
-            password: '',
-          }}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit} // Usar la función handleSubmit para el submit
-        >
-          <Form>
-            <div className="mb-3">
-             
-              <Field
-                type="email"
-                id="email"
-                name="email"
-                className="form-control"
-                placeholder="Correo electrónico"
-              />
-              <ErrorMessage name="email" component="div" className="text-danger" />
+          {/* Mostrar el mensaje de error si existe */}
+          {errorMessage && (
+            <div className="alert alert-danger" role="alert">
+              {errorMessage}
             </div>
+          )}
 
-            <div className="mb-3">
-            
-              <Field
-                type="password"
-                id="password"
-                name="password"
-                className="form-control"
-                placeholder="Contraseña"
-              />
-              <ErrorMessage name="password" component="div" className="text-danger" />
-            </div>
+          <Formik
+            initialValues={{
+              email: '',
+              password: '',
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit} // Usar la función handleSubmit para el submit
+          >
+            <Form>
+              <div className="mb-3">
+                <Field
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="form-control"
+                  placeholder="Correo electrónico"
+                />
+                <ErrorMessage name="email" component="div" className="text-danger" />
+              </div>
 
-            <button type="submit" className="btn btn-primary w-100 mt-3">
-              Iniciar sesión
-            </button>
-          </Form>
-        </Formik>
+              <div className="mb-3">
+                <Field
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="form-control"
+                  placeholder="Contraseña"
+                />
+                <ErrorMessage name="password" component="div" className="text-danger" />
+              </div>
+
+              <button type="submit" className="btn btn-primary w-100 mt-3">
+                Iniciar sesión
+              </button>
+            </Form>
+          </Formik>
+        </div>
       </div>
-    </div>
     </>
   );
 }

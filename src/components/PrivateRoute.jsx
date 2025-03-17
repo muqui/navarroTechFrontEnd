@@ -5,7 +5,8 @@ const PrivateRoute = ({ children, allowedRoles = [] }) => { // Valor por defecto
     const { user, token } = useAuth(); // Obtenemos el objeto 'user' del contexto
    
     console.log("user en private router");
-    console.log(user.id);
+   
+   
     // Verifica que 'user' y 'user.role' existan antes de hacer la validación
     if (!token) {
         return <Navigate to="/login" />;

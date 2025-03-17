@@ -7,8 +7,8 @@ function DashboardClient() {
   const [error, setError] = useState(null); // Estado para manejar errores
   const [loading, setLoading] = useState(true); // Estado para manejar el estado de carga
   const [user, setUser] = useState(null); // Estado para manejar el usuario
-  const storedUser = JSON.parse(localStorage.getItem("user"));   
-  const [orders, setOrders] = useState([]);  
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const [orders, setOrders] = useState([]);
   const apiUrl = `http://localhost:3000/orders/userById/${storedUser.id}`; // URL de la API
 
   // Verifica si el usuario está en localStorage
@@ -45,15 +45,15 @@ function DashboardClient() {
             <th>ID</th>
             <th>Marca</th>
             <th>Modelo</th>
-            <th>IMEI</th>
+          
             <th>Costo de Reparación</th>
-            <th>Pagado</th>
-            <th>Descuentos</th>
+           
+          
             <th>Falla</th>
-            <th>Comentarios</th>
+            
             <th>Estado</th>
             <th>Usuario</th>
-            <th>Técnico Asignado</th>
+           
           </tr>
         </thead>
         <tbody>
@@ -62,15 +62,14 @@ function DashboardClient() {
               <td>{order.id}</td>
               <td>{order.brand}</td>
               <td>{order.model}</td>
-              <td>{order.imei}</td>
+              
               <td>{order.repair_cost}</td>
-              <td>{order.paid}</td>
-              <td>{order.deducts}</td>
+              
               <td>{order.fail}</td>
-              <td>{order.coments}</td>
+             
               <td>{order.status}</td>
               <td>{order.user?.name} ({order.user?.email})</td>
-              <td>{order.assignedTechnician?.name} ({order.assignedTechnician?.email})</td>
+             
             </tr>
           ))}
         </tbody>
