@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+
+
+.text-outline {
+  color: white;
+  text-shadow:
+    -1px -1px 0 blue,
+     1px -1px 0 blue,
+    -1px  1px 0 blue,
+     1px  1px 0 blue;
+}

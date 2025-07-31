@@ -1,62 +1,101 @@
-// src/components/Contacto.jsx
 import React from 'react';
 
 function Contacto() {
   return (
-    <div>
-    <div className="container pt-5 mt-3">
-      <div className="row">
-        <div className="col-sm-12 order-sm-1">
-          <h1 className="text-center">Contáctanos NavarroTECH</h1>
+    <div className="max-w-7xl mx-auto px-4 pt-10" id="contacto">
+      <h1 className="text-3xl font-bold text-center mb-8">Contáctanos NavarroTECH</h1>
+
+      <div className="flex flex-col md:flex-row items-start gap-8">
+        {/* Imagen */}
+        <div className="w-full md:w-2/3 order-1 md:order-2">
+          <img
+            src="/images/NavarroTECH.png"
+            alt="NavarroTECH"
+            className="w-full h-auto object-contain"
+          />
         </div>
-        <div className="col-sm-7 order-sm-3">
-          <img src="/images/NavarroTECH.png" className="img-fluid" alt="NavarroTECH" />
-        </div>
-        <div className="col-sm-5 order-sm-2">
-          <form className="p-0 m-0" id="form">
-            <div className="row">
-              {/* Nombre */}
-              <div className="form-group col-xs-12 col-md-12">
-                <label htmlFor="nombre" className="form-label">Nombre <span className="text-danger">*</span></label>
-                <input type="text" className="form-control" id="nombre" value="" required />
-              </div>
-              
-              {/* Correo */}
-              <div className="form-group col-xs-12 col-md-12">
-                <label htmlFor="correo" className="form-label">Correo <span className="text-danger">*</span></label>
-                <input type="email" className="form-control" id="correo" value="" required />
-              </div>
 
-              {/* Celular */}
-              <div className="form-group col-xs-12 col-sm-12">
-                <label htmlFor="celular" className="form-label">Celular</label>
-                <input type="tel" className="form-control" id="celular" value="" required />
-              </div>
+        {/* Formulario */}
+        <div className="w-full md:w-1/3 order-2 md:order-1">
+          <form className="space-y-4">
+            {/* Nombre */}
+            <div>
+              <label htmlFor="nombre" className="block text-sm font-medium text-gray-700">
+                Nombre <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                required
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
 
-              {/* Asunto */}
-              <div className="form-group col-xs-12 col-sm-12">
-                <label htmlFor="asunto" className="form-label">Asunto</label>
-                <input type="text" className="form-control" id="asunto" value="" required />
-              </div>
+            {/* Correo */}
+            <div>
+              <label htmlFor="correo" className="block text-sm font-medium text-gray-700">
+                Correo <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="email"
+                id="correo"
+                required
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
 
-              {/* Comentarios */}
-              <div className="form-group col-xs-12 col-sm-12">
-                <label htmlFor="observaciones" className="form-label">Comentario <span className="text-danger">*</span></label>
-                <textarea id="observaciones" className="form-control" rows="4" required></textarea>
-              </div>
+            {/* Celular */}
+            <div>
+              <label htmlFor="celular" className="block text-sm font-medium text-gray-700">
+                Celular
+              </label>
+              <input
+                type="tel"
+                id="celular"
+                required
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
 
-              {/* Botón de enviar */}
-              <div className="form-group col-xs-12 col-sm-12 mt-2 mb-4 text-center">
-                <button type="submit" className="btn btn-primary">Enviar</button>
-              </div>
+            {/* Asunto */}
+            <div>
+              <label htmlFor="asunto" className="block text-sm font-medium text-gray-700">
+                Asunto
+              </label>
+              <input
+                type="text"
+                id="asunto"
+                required
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            {/* Comentarios */}
+            <div>
+              <label htmlFor="observaciones" className="block text-sm font-medium text-gray-700">
+                Comentario <span className="text-red-600">*</span>
+              </label>
+              <textarea
+                id="observaciones"
+                rows="4"
+                required
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+            </div>
+
+            {/* Botón */}
+            <div className="text-center pt-2">
+              <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition"
+              >
+                Enviar
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
-
-    <script src="/js/bootstrap.bundle.min.js"></script>
-  </div>
   );
 }
 
