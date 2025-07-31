@@ -31,7 +31,7 @@ function Header() {
     <header className="header">
       <nav className="navbar navbar-light fixed-top navbar-expand-lg bg-light">
         <div className="container-lg">
-          <a className="navbar-brand text-primary fw-bold fs-4" href="#">
+          <a className="navbar-brand text-primary fw-bold fs-4" href="/">
             NavarroTECH
           </a>
           
@@ -50,20 +50,23 @@ function Header() {
           
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="navbar-nav ms-auto">
-              <a className="nav-link" href="#home">Home</a>
+              <a className="nav-link" href="/">Inicio</a>
               <a className="nav-link" href="#servicios">Servicios</a>
               <a className="nav-link" href="#contacto">Contacto</a>
 
-             
+             {/* 
               
-              {/* Botón  login */}
+              {/* Botón  login
               <button onClick={handleOpenLogin} className="btn btn-link nav-link">
                 Login
               </button>
-                {/* Botón Registro */}
+               */}
+                {/* Botón Registro 
                 <button onClick={handleOpenRegister} className="btn btn-link nav-link">
                 Registro
               </button>
+
+             */}
             </div>
           </div>
         </div>

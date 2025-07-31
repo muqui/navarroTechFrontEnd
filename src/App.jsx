@@ -10,6 +10,7 @@ import Client from './components/admin/Client.jsx';
 import Login from './components/Login.jsx';
 import Registro from './components/Registro.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import { Service } from './pages/Service.jsx';
 
 function App() {
  
@@ -22,6 +23,8 @@ function App() {
 
 
           <Routes>
+              {/* Ruta informacion del estado de servico */}
+            <Route path="/service/:folio" element={<Service />} />
             {/* Ruta para el componente DashboardTechnician */}
             <Route path="/login" element={<Login />} />
             {/* Ruta para el componente registro */}
