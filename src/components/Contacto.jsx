@@ -21,7 +21,7 @@ function Contacto() {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await axios.post('https://n8n-albert.ddnsking.com/webhook-test/email', values);
+        const response = await axios.post('https://n8n-albert.ddnsking.com/webhook/email', values);
         console.log('Formulario enviado:', response.data);
         alert('Formulario enviado con éxito');
         resetForm();
