@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 function Contacto() {
+  const [loading, setLoading] = useState(false)
   const formik = useFormik({
     initialValues: {
       nombre: '',
@@ -20,14 +22,30 @@ function Contacto() {
       observaciones: Yup.string().required('El comentario es obligatorio'),
     }),
     onSubmit: async (values, { resetForm }) => {
+     
+      setLoading(true)
       try {
         const response = await axios.post('https://n8n-albert.ddnsking.com/webhook/email', values);
         console.log('Formulario enviado:', response.data);
-        alert('Formulario enviado con éxito');
+        Swal.fire({
+          title: 'Mensaje',
+          text: 'Formulario enviado con exito!!',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
         resetForm();
       } catch (error) {
         console.error('Error al enviar el formulario:', error);
-        alert('Hubo un error al enviar el formulario');
+         Swal.fire({
+      title: '¡Error!',
+      text: 'Algo salió mal, por favor intenta de nuevo.',
+      icon: 'error',       // Aquí es donde se indica que es un error
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#d33'  // Color rojo para enfatizar el error
+    });
+      }
+      finally{
+        setLoading(false)
       }
     },
   });
@@ -141,10 +159,10 @@ function Contacto() {
             {/* Botón */}
             <div className="text-center pt-2">
               <button
-                type="submit"
+                type="submit" disabled= {loading}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition"
               >
-                Enviar
+                 {loading ? 'Enviando...' : 'Enviar'}
               </button>
             </div>
           </form>
