@@ -14,7 +14,7 @@ export const Service = () => {
       try {
         const response = await axios.get(apiUrl, {
           headers: {
-            'x-client-id': 'navarro_tech_service_00001',
+            'x-client-id': 'pos_modulo_reparacion',
             'Content-Type': 'application/json',
           },
         });
